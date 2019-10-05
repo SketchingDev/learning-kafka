@@ -11,5 +11,9 @@
 > cd kafka-stack-docker-compose/
 ```
 
-\_\_
+### Contents
+
+{% page-ref page="architecture-1/zookeeper.md" %}
+
+{% page-ref page="architecture-1/kafka.md" %}
 
