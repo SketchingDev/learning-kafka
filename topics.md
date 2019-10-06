@@ -45,7 +45,7 @@ Message1
 Message2
 ```
 
-* `--bootstrap-server` - Similar to thee broker list required when producing messages to a topic this is the address of a broker from which the client can use to ‘bootstrap’. It functions as the starting point for a Kafka client to discover the full set of alive servers in the cluster.  More information [Bootstrap server vs zookeeper in kafka? - Stack Overflow](https://stackoverflow.com/questions/46173003/bootstrap-server-vs-zookeeper-in-kafka)
+* `--bootstrap-server` - Similar to the broker list required when producing messages to a topic this is the address of a broker from which the client can use to ‘bootstrap’. It functions as the starting point for a Kafka client to discover the full set of alive servers in the cluster. More information [Bootstrap server vs zookeeper in kafka? - Stack Overflow](https://stackoverflow.com/questions/46173003/bootstrap-server-vs-zookeeper-in-kafka)
 
 ### Viewing the log
 
