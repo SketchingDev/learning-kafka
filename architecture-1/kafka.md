@@ -17,13 +17,13 @@ Kafka has a few main parts:
 Producers put messages onto one or more Kafka topics
 
 * Producer can decide on the binary payload of the message
-* Designed to be loosely coupled
+* Designed to be loosely coupled to consumer
 * Can produce messages at their own rate 
 
 ### Consumer
 
 * Can consume messages at their own rate
-* Designed to be loosely coupled
+* Designed to be loosely coupled to producer
 
 ### Message
 
