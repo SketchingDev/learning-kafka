@@ -10,7 +10,7 @@ Designed to handle:
 
 
 
-Kafka has three main parts:
+Kafka has a few main parts:
 
 ### Producer
 
@@ -45,7 +45,9 @@ Sent by the producer to a topic or consumed by the consumer from a topic
 
 #### Controller Broker
 
-A controller broker is an important broker within the Kafka ecosystem that is elected by Zookeepers leader election process. The controller forms the leader-follower hierarchy of brokers within the Kafka ecosystem.
+A Controller is an important broker within the Kafka ecosystem that is elected by Zookeeper's leader election process. 
+
+This controller forms the leader-follower hierarchy, and detects failures at the broker level and is responsible for changing the leader of all affected partitions in a failed broker \[[\*](https://stackoverflow.com/a/53332332/12130943)\] 
 
 
 

@@ -1,5 +1,11 @@
 # Topics
 
+### Useful links
+
+* [https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)
+
+### Exploring via CLI
+
 These commands are from following a PluralSight course, although they’re performed in more detail in [Kafka’s Getting Started section](https://kafka.apache.org/quickstart).
 
 ### Start Zookeeper and a Kafka broker locally
