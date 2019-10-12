@@ -1,5 +1,25 @@
 # Topics
 
+Broker reads/writes to a log file
+
+
+
+### Partitions
+
+Partitions are what make publishing messages to a Kafka topic scalable, since they split the work of maintaining a commit log \(where messages are stored per offset\) for each topic across multiple brokers. Since the physical commit log for a topic is a 'partition' it means every topic will have at least one partition.
+
+When a producer then wants to publish a message to the 
+
+* Physical log file = partition
+* A partition cannot be split across hosts
+* A topic must have at least one partition
+* Offsets are stored per topic:partition for each group of consumers \(Group ID\). Interestingly the committed offset for each group is stored on a topic 
+  * \`kafka-console-consumer --bootstrap-server kafka1:9092 --topic \_\_consumer\_offsets --from-beginning\`
+
+"In general, the scalability of Kafka is determined by the number of partitions being managed by multiple broker nodes"
+
+The offset increases independently per partition, so a consumer might receive the messages out of order
+
 ### Useful links
 
 * [https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions](https://stackoverflow.com/questions/38024514/understanding-kafka-topics-and-partitions)
