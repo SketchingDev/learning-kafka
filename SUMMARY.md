@@ -2,6 +2,7 @@
 
 * [Notes from Learning Kafka](README.md)
 * [Topics](topics.md)
+* [Kafka Connect](kafka-connect.md)
 
 ## Architecture <a id="architecture-1"></a>
 

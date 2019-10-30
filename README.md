@@ -7,7 +7,7 @@
 ### Preparation
 
 ```text
-> git clone git@github.com:SketchingDev/learning-kafka.git
+> git clone --recurse-submodules git@github.com:SketchingDev/learning-kafka.git
 > cd kafka-stack-docker-compose/
 ```
 
