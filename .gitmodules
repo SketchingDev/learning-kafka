@@ -1,3 +1,6 @@
 [submodule "kafka-stack-docker-compose"]
 	path = kafka-stack-docker-compose
 	url = git@github.com:simplesteph/kafka-stack-docker-compose.git
+[submodule "supporting-files/kafka-stack-docker-compose"]
+	path = supporting-files/kafka-stack-docker-compose
+	url = git@github.com:simplesteph/kafka-stack-docker-compose.git
