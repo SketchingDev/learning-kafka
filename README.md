@@ -8,7 +8,7 @@
 
 ```text
 > git clone --recurse-submodules git@github.com:SketchingDev/learning-kafka.git
-> cd kafka-stack-docker-compose/
+> cd supporting-files/
 ```
 
 ### Useful links
