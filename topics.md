@@ -73,6 +73,40 @@ Message2
 
 * `--bootstrap-server` - Similar to the broker list required when producing messages to a topic this is a delimited list of addresses of brokers which the client can use to ‘bootstrap’ its configuration. It functions as the starting point for a Kafka client to discover the full set of alive servers in the cluster. More information [Bootstrap server vs zookeeper in kafka? - Stack Overflow](https://stackoverflow.com/questions/46173003/bootstrap-server-vs-zookeeper-in-kafka)
 
+#### Offsets / Consumer Groups
+
+Consumer\(s\) of the topic specify a Consumer Group ID, which is used to maintain the position in the topic of the group of consumers. This allows them to be restarted and pick up where they left off.
+
+It is the consumer's responsibility to commit their new offset when they consume a message.
+
+Consumer Group's details:
+
+```text
+kafka-consumer-groups --bootstrap-server kafka1:9092 --group <GROUP ID> --describe
+
+TOPIC                   PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG   CONSUMER-ID     HOST           CLIENT-ID
+example-topic-name      0          5               5               0     <CONSUMER ID>   /xxx.xx.x.x    <CONSUMER ID>
+```
+
+If a consumer group's ID isn't recognised \(e.g. it is a negative number or doesn't exist\) then the behaviour of what the broker sends to the consumer is [decided by the `auto.offset.reset` mode](https://stackoverflow.com/a/58963897).
+
+* auto.offset.reset=earliest
+* auto.offset.reset=latest \(Default\)
+* auto.offset.reset=none
+
+I'm pretty sure the consumer can override this behaviour when starting to consume from a topic.
+
+You're able to manually reset the consumer group's offset to any offset. Below is an example of resetting it back to 0, meaning when a consumer connects it will consume from the beginning of the topic
+
+```text
+kafka-consumer-groups --bootstrap-server kafka1:9092 --group <GROUP ID> --topic <TOPIC NAME> --reset-offsets --to-earliest --execute
+
+TOPIC           PARTITION  NEW-OFFSET
+<TOPID NAME>    0          0
+```
+
+For more information on viewing and resetting offsets check out [Aiven's article](https://help.aiven.io/en/articles/2661525-viewing-and-resetting-consumer-group-offsets).
+
 ### Viewing the log
 
 We can now see that the messages have been written to the log:
